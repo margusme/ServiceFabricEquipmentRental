@@ -1,0 +1,7 @@
+Caterpillar bulldozer, Heavy, 10
+KamAZ truck, Regular, 10
+Komatsu crane, Heavy, 10
+Volvo steamroller, Regular, 10
+Bosch jackhammer, Specialized, 10
+Asphalt cutter, Heavy, 30
+Cement making machine, Specialized, 30

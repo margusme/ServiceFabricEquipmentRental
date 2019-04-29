@@ -1,0 +1,117 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+
+
+
+<div ng-controller="EquipmentAppController" ng-init="refresh()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-xs-offset-0 text-center">
+                <h2>@ViewData["Title"]</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <form class="col-xs-12 center-block">
+                    <button id="btnAdd" class="btn btn-default" ng-click="close()">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        @Localizer["Close Basket"]
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <span class="pull-right">
+                            @Localizer["Add Basket"]
+                        </span>
+                    </div>
+                </div>
+                <div class="row top-buffer" ng-repeat="equipment in equipments.data">
+                    <div class="col-xs-8">
+                        <button class="btn  text-left btn-block">
+                            <span class="pull-left" ng-model="name">
+                                {{equipment.key}}
+                            </span>
+                            <span class="badge pull-right">
+                                {{equipment.value}} @Localizer["Equipment"]
+                            </span>
+                        </button>
+                    </div>
+                    <div class="col-xs-1">
+                        <input id="txtAdd" type="text" class="form-control" placeholder="@Localizer["Days"]" ng-model="days" />
+                    </div>
+                    <div class="col-xs-1">
+                        <button class="btn btn-success btn-block" ng-click="add(equipment.key, days)">
+                            <span class="glyphicon" aria-hidden="true"></span>
+                            @Localizer["Add"]
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-9 text-right">
+                    <span class="pull-right">
+                        <h4>@Localizer["My Invoices"]</h4>
+                    </span>
+                </div>
+                <div class="col-xs-3">
+                    <div class="row">
+                        <span class="pull-right">
+                            <button class="btn btn-success btn-block" ng-click="invoice()">
+                                <span class="glyphicon" aria-hidden="true"></span>
+                                @Localizer["Last Invoice"]
+                            </button>
+                        </span>
+                        <span class="pull-right">
+                            <button class="btn btn-success btn-block" ng-click="invoices()">
+                                <span class="glyphicon" aria-hidden="true"></span>
+                                @Localizer["All Invoices"]
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-2 text-center">
+                            <h3>@Localizer["Basket"]</h3>
+                        </div>
+                    </div>
+                    <div class="row top-buffer" ng-repeat="equipment in basket.data">
+                        <div class="col-xs-8">
+                            <button class="btn text-left btn-block">
+                                <span class="pull-left">
+                                    {{equipment.value.name}}
+                                </span>
+                                <span class="badge pull-center">
+                                    {{equipment.value.days}} @Localizer["Days"]
+                                </span>
+                                <span class="badge pull-right">
+                                    {{equipment.value.type}} @Localizer["Equipment"]
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-danger pull-right btn-block" ng-click="remove(equipment.key)">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                @Localizer["Remove"]
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
