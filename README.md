@@ -17,4 +17,6 @@ Visual Studio 2019 was used to generate solution but Visual Studio 2017 requirem
 
 Please download Visual Studio 2019 Professional from https://visualstudio.microsoft.com/downloads/
 
+Please run Visual Studion in Administrator privileges
+
 For deploying in Debug mode please choose Debug and x64 configuration
