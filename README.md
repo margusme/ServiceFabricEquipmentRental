@@ -1,5 +1,5 @@
 This is a sample Visual Studio solution for demonstrating Service Fabric stateless and steteful services.
-Solution is built with Visual Studio 2019 Professional and includes online heavy and specialized equipment rental
+Solution is built with Visual Studio 2019 Professional and includes online heavy and specialized equipment rental.
 Each rental element along with maximum available count is first defined in file equipment.txt in the project root of EquipmentData. 
 
 After running the solution, this data is loaded into memory and replicated across service fabric. 
