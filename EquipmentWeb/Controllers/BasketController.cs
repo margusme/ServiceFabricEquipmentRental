@@ -20,9 +20,9 @@ namespace EquipmentWeb.Controllers
     /// </summary>
     [Produces("application/json")]
     [Route("api/Basket")]
-    public class BasketController : BaseController
+    public class BasketController : BaseController<BasketController>
     {
-        public BasketController(ILogger<InvoicesController> logger, ICommon common) : base(logger, common)
+        public BasketController(ICommon common) : base(common)
         {
 
         }
@@ -74,6 +74,7 @@ namespace EquipmentWeb.Controllers
         public async Task<IActionResult> Put(string name, int days = Constants.MinimumOrderDays)
         {
             _logger.Log(LogLevel.Information, $"Start sending new basket rental data to backend, {name}/{days}");
+            System.Diagnostics.Debug.WriteLine("your message here-------------------------------------------------------->");
             days = days < 1 ? 1 : days;
             string proxyUrl = _common.GetBasketProxyPutUrl(name, days);
 

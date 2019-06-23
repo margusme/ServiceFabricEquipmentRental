@@ -19,9 +19,9 @@ namespace EquipmentWeb.Controllers
     /// </summary>
     [Produces("application/json")]
     [Route("api/Equipments")]
-    public class EquipmentsController : BaseController
+    public class EquipmentsController : BaseController<EquipmentsController>
     {
-        public EquipmentsController(ILogger<EquipmentsController> logger, ICommon common) : base(logger, common)
+        public EquipmentsController(ICommon common) : base(common)
         {
 
         }

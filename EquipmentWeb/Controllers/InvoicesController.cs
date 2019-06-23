@@ -20,11 +20,11 @@ namespace EquipmentWeb.Controllers
     /// </summary>
     [Produces("application/json")]
     [Route("api/Invoices")]
-    public class InvoicesController : BaseController
+    public class InvoicesController : BaseController<InvoicesController>
     {
         protected readonly IStringLocalizer<InvoicesController> _localizer;        
 
-        public InvoicesController(IStringLocalizer<InvoicesController> localizer, ILogger<InvoicesController> logger, ICommon common) : base(logger, common)
+        public InvoicesController(IStringLocalizer<InvoicesController> localizer, ICommon common) : base(common)
         {
             _localizer = localizer;            
         }
