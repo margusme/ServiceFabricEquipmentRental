@@ -16,3 +16,7 @@ To run Service Fabric applications on Windows, please read https://docs.microsof
 Visual Studio 2019 was used to generate solution but Visual Studio 2017 requirements apply to Visual Studio 2019 as well
 
 Please download Visual Studio 2019 Professional from https://visualstudio.microsoft.com/downloads/
+
+Please run Visual Studion in Administrator privileges
+
+For deploying in Debug mode please choose Debug and x64 configuration
